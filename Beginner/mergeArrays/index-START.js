@@ -6,15 +6,16 @@
 
 function mergeArrays(...arrays) {
 
-    let jointArray = []
-    
-    arrays.forEach(array => {
-        jointArray = [...jointArray, ...array]
-    });
+    // a nice one-liner... but .flat() doesn't work with leading zeros!!!
+    // console.log([...new Set(arrays.flat().sort((a,b) => a-b))])
 
-    return [...new Set([...jointArray])]
+    // so I tried it with forEach:
+    const flatEls = []
+    arrays.forEach(arr => arr.forEach(el => flatEls.push(el)))
 
-    
+    return [...new Set(flatEls.sort((a, b) => a - b))]
+
+    //using .filter to compare the current index with the index of the item is fastest
 }
 
 

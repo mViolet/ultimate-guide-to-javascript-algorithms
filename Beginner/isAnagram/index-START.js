@@ -6,9 +6,19 @@ don't. E.g
 */
 
 
-
+//this was my solution before realizing I should have sanitized the string
 function isAnagram(stringA, stringB) {
-    // Code goes here
+    // check if length is the same
+    //loop through and check that each letter exists in other string
+
+    if (stringA.length === stringB.length && stringA.length >= 1) {
+        for (let i = 0; i < stringA.length; i++){
+            if (!stringB.includes(stringA[i])) return false
+        }
+        return true
+    } else {
+        return false
+    }
 }
 
 

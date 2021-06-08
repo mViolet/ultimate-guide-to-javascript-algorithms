@@ -6,7 +6,12 @@ where the sequence is:
 
 
 function fibonacci(n) {
-    // Code goes here
+    let sum = 0
+    for (let i=0; i <= n; i++){
+        console.log(sum)
+        sum += n
+    }
+    return ('nth num: ', sum)
 }
 
 module.exports = fibonacci

@@ -4,9 +4,14 @@ E.g reverseString('algorithms') // should return 'smhtirogla'
 */
 
 
-
+//performance of .reduce() is similar
 function longestWord(text) {
-    // Code goes here
+    let word = ''
+    let arr = text.split(' ')
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i].length > word.length) word = arr[i]
+    }
+    return word
 }
 
 

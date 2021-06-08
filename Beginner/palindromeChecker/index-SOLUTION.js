@@ -5,7 +5,7 @@ function palindromeChecker(text) {
     var reversedText = text.toLowerCase()
         .split('').reverse().join('')
 
-    return text === reversedText
+    return text.toLowerCase() === reversedText //passes test cases without .toLowerCase(), but am sure they meant to include it
 }
 
 

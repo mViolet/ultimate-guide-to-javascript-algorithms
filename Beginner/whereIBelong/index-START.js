@@ -7,11 +7,19 @@ whereIBelong([1,2,3,4], 1.5) // should return 1 because it is greater
 than 1(index 0), but less than 2(index 1).
 */
 
-
+//presuming the array is not sorted
 
 function whereIBelong(arr, num) {
-   // Code goes here
+   const arrCopy = [...arr]
+   arrCopy.sort((a,b) => a-b) //array is sorted, arr is unaffected
+   let counter = 0
 
+   for (let i=0; i < arrCopy.length; i++){
+      if (arrCopy[i] < num) counter++
+      if (arrCopy[i] > num) break //break to prevent going through whole array
+   }
+
+   return counter
 }
 
 

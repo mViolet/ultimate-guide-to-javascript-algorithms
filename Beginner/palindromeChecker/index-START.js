@@ -5,11 +5,21 @@ e.g palindromeChecker('racecar') // will return true
 
 
 
+// my solution
+// function palindromeChecker(text) {
+//     const lower = text.toLowerCase()
+//     return lower === lower.split('').reverse().join('')
+// }
 
+// the more performant solution
 function palindromeChecker(text) {
-    v// Code goes here
+    const textLen = text.length
+    for (let i = 0; i < textLen / 2; i++) {
+        if (text[i] !== text[textLen - 1 - i]) {
+            return false
+        }
+    }
+    return true
 }
-
-
 
 module.exports = palindromeChecker;

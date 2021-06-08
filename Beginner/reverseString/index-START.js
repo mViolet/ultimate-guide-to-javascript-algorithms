@@ -6,7 +6,11 @@ E.g reverseString('algorithms') // should return 'smhtirogla'
 
 
 function reverseString(text) {
-    // Code goes here
+    let reversed = ''
+    for (let i=text.length-1; i >= 0; i--) {
+        reversed += text[i]
+    }
+    return reversed
 }
 
 
